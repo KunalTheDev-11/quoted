@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quoted – Every quote is original</title>
+<meta name="description" content="Quoted is an Android app with curated, original quotes matched to your situation, not a category.">
+<meta property="og:title" content="Quoted – Every quote is original">
+<meta property="og:description" content="Tell Quoted what’s happening in your life. Get an original quote that fits, and one line on why.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 fill=%22%23FFD23F%22/><text x=%2216%22 y=%2425%22 font-size=%2226%22 font-weight=%22900%22 text-anchor=%22middle%22 font-family=%22sans-serif%22>Q</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Newsreader:ital,wght@0,400;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="index.html">Quoted</a>
+    <nav aria-label="Main">
+      <a href="#features">Features</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="#get">Get the app</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div>
+      <h1>Quotes that fit your moment, not a category.</h1>
+      <p class="lead">Tell Quoted what’s happening. Get an original quote written for it, with one line on why it fits.</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.kunalthedev.quoted">Get it on Google Play</a>
+    </div>
+    <div class="demo" aria-live="polite">
+      <p class="tag">You type</p>
+      <p class="said" id="said"></p>
+      <p class="quote" id="quote"></p>
+      <p class="why" id="why"></p>
+      <button type="button" id="next">Try another moment</button>
+    </div>
+  </div>
+
+  <section class="features" id="features">
+    <div class="wrap">
+      <div class="row">
+        <h2>Situation Matcher</h2>
+        <p>Type or speak what’s going on, in your own words. Quoted picks an original quote that fits and adds a one-line reason. Save it to your vault or share the card.</p>
+      </div>
+      <div class="row">
+        <h2>Daily Quote Duel</h2>
+        <p>Two original quotes, one vote a day. Pick the stronger one, then see how other readers voted and share your result.</p>
+      </div>
+      <div class="row">
+        <h2>Mental Vault</h2>
+        <p>Keep the quotes that land. Search them, sort by newest, oldest, A–Z or Golden Wisdom, listen to any quote read aloud, and back up the whole vault as a text file.</p>
+      </div>
+      <div class="row">
+        <h2>Social Studio</h2>
+        <p>Turn a quote into a Story (9:16), square post (1:1) or banner (16:9). Choose a gradient or wallpaper, set the type, add a contrast mask, and share in HD.</p>
+      </div>
+      <div class="row">
+        <h2>Made for daily reading</h2>
+        <p>Full-screen quote cards in Dark, Light or Sepia. Auto-advance every 5, 10 or 15 seconds, get a daily quote notification, switch between English and Hinglish, and keep reading offline.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="get">
+    <div class="wrap">
+      <h2>Every quote is original.</h2>
+      <p>Free on Android 8.0 and up.</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.kunalthedev.quoted">Get it on Google Play</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 kunalthedev. Quoted is an Android app.</span>
+    <a href="privacy.html">Privacy Policy</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var D=[
+    {s:"I have an interview in an hour.",q:"Nerves are proof that it matters. Walk in carrying that, not apologizing for it.",w:"Turns the shaking into energy you can use right before you need it."},
+    {s:"My best friend just moved away.",q:"Distance changes the address of a friendship, not its depth.",w:"Names what you’re losing, and what you’re not."},
+    {s:"Everyone around me is moving forward and I’m stuck.",q:"Your pace is not a verdict. Some roots grow downward for a long time before anything shows.",w:"Separates how fast you’re going from how much you’re growing."}
+  ],i=0;
+  function show(){var d=D[i];
+    document.getElementById("said").textContent="“"+d.s+"”";
+    document.getElementById("quote").textContent="“"+d.q+"”";
+    document.getElementById("why").textContent="Why this fits you right now: "+d.w;}
+  document.getElementById("next").addEventListener("click",function(){i=(i+1)%D.length;show();});
+  show();
+})();
+</script>
+</body>
+</html>
